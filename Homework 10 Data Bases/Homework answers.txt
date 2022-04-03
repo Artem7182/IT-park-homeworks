@@ -1,0 +1,25 @@
+1. Вывести список карточек животных, отсортировав их по возрасту от младшего к старшему:
+SELECT * FROM pets ORDER BY birthdate;
+
+2. Для выполнения задания нужна хотя бы одна карточка питомца с кличкой «Барсик».
+Вывести всех питомцев с кличкой «Барсик»:
+SELECT * FROM Pets WHERE 'name' = 'Барсик';
+
+3. Вывести кол-во осмотров, проведенных Ольгой Владимировой.
+SELECT * FROM inspections WHERE doctors_id = 11;
+
+4.Вывести список всех питомцев, проживающих под одной крышей:
+SELECT * fROM pets WHERE address IN (SELECT address FROM pets GROUP BY address HAVING COUNT(*) > 1)
+ORDER BY address;
+
+5.Вывести список «врач-количество питомцев», 
+где кол-во питомцев = кол-во уникальных питомцев на учете у врача.
+SELECT DISTINCT * FROM inspections WHERE pets_id = doctors_id;
+
+6. Вывести список кабинетов, в которых принимает врач Владимирова Ольга?
+
+SELECT room fROM inspections WHERE doctors_id = 11;
+
+7. Вывести Адрес врача, который осматривал сегодня собаку по имени «Челси»
+
+SELECT * FROM doctors INNER JOIN inspections ON doctors.id = inspections.pets_id WHERE pets_id = 4;

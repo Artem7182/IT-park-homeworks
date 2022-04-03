@@ -1,0 +1,63 @@
+CREATE table Pets
+     (id INT NOT NULL PRIMARY KEY,
+     name TEXT NOT NULL,
+     species TEXT NOT NULL,
+     breed TEXT NOT NULL,
+     sex CHAR NOT NULL,
+     birthdate DATE NOT NULL,
+     disease TEXT NULL,
+     sterilized BOOLEAN NOT NULL,
+     owner_name TEXT NOT NULL,
+     address TEXT NOT NULL);
+INSERT INTO Pets VALUES (1,'Барсик','cat','британец','m','10-17-2021',NULL,true,'Андрей','Тюленина, 7');
+INSERT INTO Pets VALUES (2,'Чижик','bird','ара','m','9-03-2017',NULL,false,'Петр','Арбат, 176');
+INSERT INTO Pets VALUES (3,'Мурзик','cat','шотландец','m','5-02-2012',NULL,false,'Олег','Пушкина, 29');
+INSERT INTO Pets VALUES (4,'Челси','dog','овчарка','m','12-7-2011',NULL,true,'Михаил','Тюленина, 7');
+INSERT INTO Pets VALUES (5,'Буренка','cow','альпийская','f','3-5-2013',NULL,false,'Мария','Булак, 174');
+INSERT INTO Pets VALUES (6,'Косой','rabbit','обычный','m','4-7-2015',NULL,false,'Анна','Толстого, 17');
+INSERT INTO Pets VALUES (7,'Барсик','cat','персидский','m','4-7-2015',NULL,false,'Алена','Тюленина, 7');
+INSERT INTO Pets VALUES (8,'Милка','rat','домашняя','f','10-21-2013',NULL,false,'Катя','Кирова, 45');
+INSERT INTO Pets VALUES (9,'Арнольд','dog','ротвейлер','m','3-19-2007',NULL,false,'Винc','Красноармейская, 53');
+INSERT INTO Pets VALUES (10,'Попка','bird','попугай','m','11-9-2021',NULL,false,'Никита','Тюленина, 7');
+
+CREATE table Doctors
+(id INT NOT NULL PRIMARY KEY,
+lastname TEXT NOT NULL, 
+firstname TEXT NOT NULL, 
+specialization TEXT NOT NULL, 
+address TEXT NOT NULL);
+
+INSERT INTO Doctors VALUES (11,'Владимирова','Ольга','терапевт','Арбат, 195');
+INSERT INTO Doctors VALUES (12,'Иванова','Анна','Хирург','Арбат, 195');
+INSERT INTO Doctors VALUES (13,'Егорова','Екатрина','Ренгтгенолог','Арбат, 195');
+INSERT INTO Doctors VALUES (14,'Иванов','Владимир','Узист','Арбат, 195');
+INSERT INTO Doctors VALUES (15,'Олегов','Максим','Терапевт','Арбат, 195');
+INSERT INTO Doctors VALUES (16,'Михайлов','Стас','Хирург','Арбат, 195');
+INSERT INTO Doctors VALUES (17,'Большова','Анастасия','Терапевт','Арбат, 195');
+INSERT INTO Doctors VALUES (18,'Минина','Евгения','Терапевт','Арбат, 195');
+INSERT INTO Doctors VALUES (19,'Ежова','Валентина','Офтальмолог','Арбат, 195');
+INSERT INTO Doctors VALUES (20,'Пупкин','Иван','Хирург','Арбат, 195');
+
+CREATE TABLE Inspections
+(id INT PRIMARY KEY, 
+Pets_id INT,FOREIGN KEY (Pets_id) REFERENCES Pets(id) , 
+Doctors_id INT, FOREIGN KEY (Doctors_id) REFERENCES Doctors(id), 
+date TIMESTAMP NOT NULL, 
+room INT NOT NULL, 
+prescription TEXT NULL, 
+price NUMERIC NULL);
+
+INSERT INTO Doctors VALUES (31,1,13,02-13-2022,231,'нет',300);
+INSERT INTO Doctors VALUES (32,5,11,now,233,'нет',700);
+INSERT INTO Doctors VALUES (33,4,15,now,231,'нет',1000);
+INSERT INTO Doctors VALUES (34,7,18,03-01-2022,232,'нет',500);
+INSERT INTO Doctors VALUES (35,3,19,01-01-2022,231,'нет',600);
+INSERT INTO Doctors VALUES (36,6,15,02-22-2022,233,'нет',400);
+INSERT INTO Doctors VALUES (37,10,11,now,231,'нет',800);
+INSERT INTO Doctors VALUES (39,2,11,03-15-2022,233,'нет',1500);
+INSERT INTO Doctors VALUES (40,7,14,12-12-2022,233,'нет',200);
+
+
+
+
+
