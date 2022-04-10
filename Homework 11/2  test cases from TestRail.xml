@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite>
+	<id>S1</id>
+	<name>Master</name>
+	<description></description>
+	<sections>
+		<section>
+		<name>Prerequisites</name>
+		<description></description>
+						<cases>
+												<case>
+				<id>C2124</id>
+				<title>Ввод невалидных данных карты для оплаты пробного периода</title>
+												<template>Test Case (Steps)</template>
+																<type>Regression</type>
+																<priority>Critical</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Использовать 
+браузер Mozilla Firefox v. 98.0.2
+Залогиниться на сайт https://hd.kinopoisk.ru/ используя тест-кейс C2123
+
+Настроить Charles Proxy на отображение запросов браузера Mozilla Firefox v. 98.0.2
+</preconds>
+										<steps_separated><step>
+<index>1</index><content>Залогиниться на сайт https://hd.kinopoisk.ru/ используя тест-кейс C2123</content><expected>Регистрация успешно пройдена</expected></step>
+<step>
+<index>2</index><content>Нажать на &quot;Попробовать 30 дней бесплатно&quot;</content><expected>Откроется окно ввода данных карты</expected></step>
+<step>
+<index>3</index><content>В поле ввода &quot;номер карты&quot; ввести &quot;1323 1487 9357 8098566&quot;</content><expected>&quot;1323 1487 9357 8098566&quot; отображается в поле ввода &quot;номер карты&quot;</expected></step>
+<step>
+<index>4</index><content>В поле ввода &quot;ММ.ГГ&quot; ввести &quot;02.65&quot;</content><expected>&quot;02.65&quot; отображается в поле ввода &quot;ММ.ГГ&quot; </expected></step>
+<step>
+<index>5</index><content>В поле ввода CVV ввести 123 </content><expected>В поле ввода CVV отображаются скрытое введенное значение</expected></step>
+<step>
+<index>6</index><content>Открыть Charles Proxy и найти https://diehard.yandex.ru 
+</content><expected>Отображается информация о запросе</expected></step>
+<step>
+<index>7</index><content>Убрать checkbox &quot;Я соглашаюсь на получение рекламных и информационных сообщений&quot; в меню ввода данных банковской карты</content><expected>Галочка не отображается на checkbox
+</expected></step>
+<step>
+<index>8</index><content>Открыть Charles Proxy
+</content><expected>откроется structure с запросами
+</expected></step>
+<step>
+<index>9</index><content>Открыть браузер и Нажать [попробовать бесплатно] на странице ввода данных карты https://hd.kinopoisk.ru/
+</content><expected>На экране появится ошибка &quot;Ошибка при оплате Пожалуйста, попробуйте ещё раз&quot;</expected></step>
+<step>
+<index>10</index><content>Открыть Charles Proxy и отследить запрос https://diehard.yandex.ru
+</content><expected>В Summary отображается 200 статус код 
+</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+								<sections>
+		<section>
+		<name>Software &amp; Versions</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Hardware</name>
+		<description></description>
+									</section>
+	</sections>
+			</section>
+			<section>
+		<name>Installation</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Updates</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Tutorial</name>
+		<description></description>
+										<sections>
+		<section>
+		<name>Goals</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Metrics</name>
+		<description></description>
+									</section>
+	</sections>
+			</section>
+			<section>
+		<name>Login &amp; Account</name>
+		<description></description>
+						<cases>
+												<case>
+				<id>C2123</id>
+				<title>Регистрация пользователя на сайте https://hd.kinopoisk.ru</title>
+												<template>Test Case (Steps)</template>
+																<type>Regression</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<preconds>
+Открыть браузер Mozilla Firefox v. 98.0.2
+Зайти на https://temp-mail.org для создания временного адреса электронной почты
+</preconds>
+										<steps_separated><step>
+<index>1</index><content>Открыть страницу https://hd.kinopoisk.ru в браузере</content><expected>Откроется главная страница https://hd.kinopoisk.ru </expected></step>
+<step>
+<index>2</index><content>Нажать на &quot;попробовать 30 дней бесплатно&quot;</content><expected>Откроется поле ввода электронной почты</expected></step>
+<step>
+<index>3</index><content>Ввести валидный адрес электронной почты</content><expected>Отправится сообщение для подтверждения данный адрес электронной почты</expected></step>
+<step>
+<index>4</index><content>Ввести полученный код подтверждения в поле ввода</content><expected>Откроется поле ввода Имя Фамилия</expected></step>
+<step>
+<index>5</index><content>Ввести в поле ввода Ваня Пупкин и нажать &quot;продолжить&quot;</content><expected>Регистрация успешно пройдена</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+								<sections>
+		<section>
+		<name>Reset Password</name>
+		<description></description>
+									</section>
+	</sections>
+			</section>
+			<section>
+		<name>Feature 1</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Feature 2</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Feature 3</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Feature 4</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Feature 5</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Administration</name>
+		<description></description>
+										<sections>
+		<section>
+		<name>Projects</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Settings</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Users &amp; Roles</name>
+		<description></description>
+										<sections>
+		<section>
+		<name>Permissions</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Groups</name>
+		<description></description>
+									</section>
+	</sections>
+			</section>
+	</sections>
+			</section>
+			<section>
+		<name>Search</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Help &amp; Documentation</name>
+		<description></description>
+									</section>
+	</sections>
+</suite>
